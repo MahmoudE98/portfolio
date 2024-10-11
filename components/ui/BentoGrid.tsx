@@ -6,8 +6,8 @@ import animationData from '@/data/confetti.json';
 import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-import { BsArrowLeft } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
+
 export const BentoGrid = ({
   className,
   children,
@@ -23,6 +23,7 @@ export const BentoGrid = ({
         className
       )}
     >
+      
       {children}
     </div>
   );

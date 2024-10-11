@@ -22,7 +22,8 @@ export const ProjectCard = ({
     titleClassName,
     img,
     imgClassName,
-    description
+    description,
+    spareImg,
 }: {
     className?: string;
     id?: number;
@@ -31,17 +32,43 @@ export const ProjectCard = ({
     img?: string;
     imgClassName?: string;
     description?: string | React.ReactNode
+    spareImg?: string;
 
 }) => {
   return (
     <div className={cn(
-        "relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 ", className
+        "relative overflow-hidden rounded-3xl mt-10 justify-between flex flex-col md:flex-row ", className
     )}
     style={{background: "radial-gradient(circle, rgba(30,140,168,1) 0%, rgba(24,42,171,1) 100%)"}}>
-        <div className=''>
-            <div>
-
+        <div className="flex flex-col md:w-1/2">
+            <div className={cn("flex flex-col pr-4", titleClassName)}>
+                <div className='sm:text-2xl text-xl'>
+                    {title}
+                </div>
+                <div>
+                    {description}
+                </div>
             </div>
+            {spareImg && (
+                <div className='relative flex justify-center items-center overflow-hidden '>
+                    <img
+                        className=" w-[50%] object-cover object-center border rounded-3xl hidden md:block"
+                        alt={spareImg}
+                        src={spareImg}
+                    />
+                </div>
+            )}
+        </div>
+
+        {/* Right side with main image */}
+        <div className="md:w-1/2 flex justify-center items-center overflow-hidden relative">
+            {img && (
+                <img
+                    className={cn("object-center object-cover w-full h-full border-slate-950 border-2 rounded-3xl", imgClassName)}
+                    alt={img}
+                    src={img}
+                />
+            )}
         </div>
     </div>
   );

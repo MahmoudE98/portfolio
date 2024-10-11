@@ -13,9 +13,10 @@ const Projects = () => {
                 className={item.className}
                 title={item.title}
                 titleClassName={item.titleClassName}
-                img={item.className}
+                img={item.img}
                 imgClassName={item.imgClassName}
                 description={item.description}
+                spareImg={item.spareImg}
                 />
             ))}
         </ProjectCardSlider>
