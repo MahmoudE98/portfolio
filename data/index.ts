@@ -12,9 +12,9 @@ export const gridItems = [
       titleArray: ["A LITTLE ABOUT ME", "COLLEGE LIFE", "IN THE COMING FUTURE" ],
       description: "",
       descriptionArray: ["Hi, I'm Mahmoud Esmail, a computer science student currently attending Hunter College with a passion for web development and software engineering. I am currently exploring many paths as of now and trying to familiarize myself with more fields of knowledge and expand my visions", "I am currently attending Hunter College in New York City and working towards my bachelors in Computer Science. Currently a sophmore and expected graduation date is May 2027. Because of transferred credits however, possible graduation date could hopefully be May 2026 :)", ""],
-      className: "lg:col-span-4 md:col-span-7 md:row-span-3 lg:row-span-5 lg:col-span-4 md:row-span-3 lg:min-h-[600px] md:min-h-[500px]",
+      className: "lg:col-span-4 md:col-span-7 md:row-span-3 lg:row-span-5 lg:col-span-4 md:row-span-3 lg:min-h-[70vh] md:min-h-[40vh]",
       imgClassName: "h-full w-full  opacity-70 hidden md:block",
-      titleClassName: "flex flex-col justify-center md:justify-center lg:justify-start pt-4 pl-4 md:max-w-[400px] lg:max-w-full ",
+      titleClassName: "flex flex-col justify-center items-centermd:justify-center lg:justify-start pt-4 pl-4 md:max-w-[400px] lg:max-w-full ",
       img: "Person.jpeg",
     }, 
     {
