@@ -82,25 +82,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "draw-zigzag": {
-          '0%': {strokeDasharray: '0, 200'},
-          '100%': {strokeDasharray: '200, 0'},
-        },
-        "fade-enter": {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        "fade-out": {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        squish: {
+          "50%": {
+            scale: "1.4 0.6"
+          }
         },
         spotlight: {
           "0%": {
@@ -160,11 +145,7 @@ const config = {
         },
       },
       animation: {
-        "draw-zigzag": "draw-zigzag 2s ease-in-out forwards",
-        "fade-enter": "fade-enter 0.5s ease-in-out",
-        "fade-out": "fade-out 0.5s ease-in-out",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        squish: "squish 200ms ease-in-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
         first: "moveVertical 30s ease infinite",

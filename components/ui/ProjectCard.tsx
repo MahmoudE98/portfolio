@@ -9,7 +9,8 @@ export const ProjectCardSlider = ({
     className?: string;
 }) => {
     return (
-        <div>
+        
+        <div className={className}>
             {children}
         </div>
     );
@@ -37,12 +38,12 @@ export const ProjectCard = ({
 }) => {
   return (
     <div className={cn(
-        "relative overflow-hidden rounded-3xl mt-10 justify-between flex flex-col md:flex-row ", className
+        "relative overflow-hidden rounded-3xl mt-10 justify-between flex flex-col lg:flex-row", className
     )}
     style={{background: "radial-gradient(circle, rgba(30,140,168,1) 0%, rgba(24,42,171,1) 100%)"}}>
-        <div className="flex flex-col md:w-1/2">
-            <div className={cn("flex flex-col pr-4", titleClassName)}>
-                <div className='sm:text-2xl text-xl'>
+        <div className="flex flex-col lg:w-1/2 gap-10">
+            <div className={cn("flex flex-col", titleClassName)}>
+                <div className='sm:text-2xl mt-4 text-xl font-bold'>
                     {title}
                 </div>
                 <div>
@@ -50,21 +51,23 @@ export const ProjectCard = ({
                 </div>
             </div>
             {spareImg && (
-                <div className='relative flex justify-center items-center overflow-hidden '>
+                <div className='relative flex justify-center items-center overflow-hidden'>
                     <img
-                        className=" w-[50%] object-cover object-center border rounded-3xl hidden md:block"
+                        className="object-center border rounded-3xl hidden lg:block border-transparent"
                         alt={spareImg}
-                        src={spareImg}
+                        src={spareImg} 
+                        width={300}
+                        height={200}
                     />
                 </div>
             )}
         </div>
 
         {/* Right side with main image */}
-        <div className="md:w-1/2 flex justify-center items-center overflow-hidden relative">
+        <div className="lg:w-1/2 flex justify-center items-center overflow-hidden relative">
             {img && (
                 <img
-                    className={cn("object-center object-cover w-full h-full border-slate-950 border-2 rounded-3xl", imgClassName)}
+                    className={cn("object-contain rounded-3xl min-w-[90%] ", imgClassName)}
                     alt={img}
                     src={img}
                 />

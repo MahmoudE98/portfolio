@@ -37,6 +37,7 @@ export const BentoGridItem = ({
   descriptionArray = [],
   id,
   img,
+  imgArray = [],
   imgClassName,
   titleClassName,
 }: {
@@ -47,6 +48,7 @@ export const BentoGridItem = ({
   descriptionArray?: string[] | React.ReactNode[];
   id?: number;
   img?: string;
+  imgArray?: string[] | React.ReactNode[];
   imgClassName?: string;
   titleClassName?: string;
 }) => {
@@ -82,7 +84,7 @@ export const BentoGridItem = ({
             <img
             src={img}
             alt={img}
-            className={cn(imgClassName,  `${id === 1 ? "md:pl-[390px] lg:pl-24 lg:pr-24 lg:pt-52 top-auto bottom-0 object-contain " : "object-cover object-center"}`
+            className={cn(imgClassName,  `${id === 1 ? "md:pl-[400px] lg:px-0 lg:pt-64  object-contain " : "object-cover object-center"}`
             )}/>
           )}
         </div>
@@ -94,7 +96,7 @@ export const BentoGridItem = ({
         )}
         
         <div className={cn(
-          titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5  lg:p-10'
+          titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col py-10 lg:px-10'
         )}>
            <div className={cn(`${id === 2 ? 'text-neutral-100' :  'text-[#C1C2D3]'}`, `${id === 1 ? 'lg-text-base' : 'lg:text-lg' }`, "font-sans font-normal text-sm md:text-base z-10")} >
            {id === 1 ? descriptionArray[currIndex] : description}
