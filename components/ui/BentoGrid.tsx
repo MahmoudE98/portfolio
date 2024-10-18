@@ -53,16 +53,11 @@ export const BentoGridItem = ({
   titleClassName?: string;
 }) => {
   const [copied, setCopied] = useState(false);
-  const [fadeState, setFadeState] = useState("fade-enter");
   const [currIndex, setCurrIndex] = useState(0);
   const leftLists = ["ReactJS", "JavaScript", "HTML", "CSS"];
   const rightLists = ["C++", "Java", "Python"];
   const handleClick = () => {
-    setFadeState("fade-enter");
-    setTimeout(() => {
-      setCurrIndex((prev) => (prev + 1) % titleArray.length);
-      setFadeState("fade-enter-active");
-    }, 500);
+    setCurrIndex((prev) => (prev + 1) % titleArray.length);
   }
   const handleCopy = () => {
     navigator.clipboard.writeText('mesmail9043@gmail.com');
@@ -84,7 +79,7 @@ export const BentoGridItem = ({
             <img
             src={img}
             alt={img}
-            className={cn(imgClassName,  `${id === 1 ? "md:pl-[400px] lg:px-0 lg:pt-64  object-contain " : "object-cover object-center"}`
+            className={cn(imgClassName,  `${id === 1 ? "md:pl-[400px] lg:px-0 lg:pt-64 object-contain object-center" : "object-cover object-center"}`
             )}/>
           )}
         </div>
@@ -96,8 +91,10 @@ export const BentoGridItem = ({
         )}
         
         <div className={cn(
-          titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col py-10 lg:px-10'
-        )}>
+          titleClassName, 'group-hover/bento:translate-x-2 relative md:h-full min-h-40 flex-col py-10 lg:px-10 flex transition-transform duration-700 ease-in-out'        
+        )} 
+        style={{ transform: `translateX(-${currIndex * 100}%)` }}
+        >
            <div className={cn(`${id === 2 ? 'text-neutral-100' :  'text-[#C1C2D3]'}`, `${id === 1 ? 'lg-text-base' : 'lg:text-lg' }`, "font-sans font-normal text-sm md:text-base z-10")} >
            {id === 1 ? descriptionArray[currIndex] : description}
           </div>
